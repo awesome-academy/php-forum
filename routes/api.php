@@ -16,3 +16,4 @@ use Illuminate\Http\Request;
 Route::post('login', 'Admin\Api\AuthController@login');
 Route::get('profile', 'Admin\Api\AuthController@me');
 Route::resource('users', 'Admin\Api\UserController')->except(['edit', 'create']);
+Route::resource('tags', 'Admin\Api\TagController')->except(['edit', 'create']);

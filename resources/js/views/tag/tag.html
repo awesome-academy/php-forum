@@ -1,0 +1,24 @@
+<b-row>
+    <b-col cols="12" lg="12">
+        <b-card no-header>
+            <b-row class="mb-3">
+                <b-col cols="12" lg="12">
+                    <b-button variant="primary" class="pull-right"><i class="fa fa-pencil"></i> {{ $t('Add new') }}</b-button>
+                </b-col>
+            </b-row>
+            <b-table striped hover :items="items" :fields="fields" selectable select-mode="single">
+                <template slot="name" slot-scope="row">
+                    <i class="fa fa-tag"></i> {{ row.item.name }}
+                </template>
+                <template slot="description" slot-scope="row">
+                    {{ row.item.description ? row.item.description : row.item.name }}
+                </template>
+                <template slot="action" slot-scope="row">
+                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-times"></i>
+                </template>
+            </b-table>
+            <paginate :page-count="last_page" :click-handler="changePage" prev-text="prev" next-text="next" :container-class="'pagination'" class="pull-right"></paginate>
+        </b-card>
+    </b-col>
+</b-row>

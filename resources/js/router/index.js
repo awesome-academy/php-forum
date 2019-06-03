@@ -7,6 +7,8 @@ import Dashboard from '@/views/Dashboard'
 
 import User from '@/views/user'
 
+import Tag from '@/views/tag'
+
 import Login from '@/views/pages/Login'
 
 import { checkToken } from '@/helper/local-storage'
@@ -34,6 +36,11 @@ const router = new Router({
                     path: 'user',
                     name: 'User',
                     component: User
+                },
+                {
+                    path: 'tag',
+                    name: 'Tag',
+                    component: Tag
                 }
             ]
         },
